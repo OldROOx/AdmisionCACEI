@@ -1,75 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@400;500;600&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Replaced @import statements with @tailwind directives for compatibility */
+@layer base {
+    :root {
+        /* Updated color palette to educational emerald theme */
+        --background: 0 0% 100%; /* White background */
+        --foreground: 220 14% 34%; /* Dark gray text */
+        --card: 210 20% 96%; /* Light gray card background */
+        --card-foreground: 220 14% 34%; /* Dark gray card text */
+        --popover: 0 0% 100%; /* White popover background */
+        --popover-foreground: 220 14% 34%; /* Dark gray popover text */
 
-:root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.205 0 0);
-  --card: oklch(0.97 0 0);
-  --card-foreground: oklch(0.269 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.205 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.646 0.222 280.116);
-  --secondary-foreground: oklch(1 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.646 0.222 280.116);
-  --accent-foreground: oklch(1 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.878 0 0);
-  --input: oklch(1 0 0);
-  --ring: oklch(0.646 0.222 280.116 / 0.5);
-  --chart-1: oklch(0.646 0.222 100.116);
-  --chart-2: oklch(0.6 0.245 27.325);
-  --chart-3: oklch(0.498 0.17 162.48);
-  --chart-4: oklch(0.577 0.245 27.325);
-  --chart-5: oklch(0.205 0 0);
-  --radius: 0.5rem;
-}
+        --primary: 160 84% 39%; /* Emerald primary */
+        --primary-foreground: 0 0% 100%; /* White text on primary */
 
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.985 0 0);
-  --primary-foreground: oklch(0.145 0 0);
-  --secondary: oklch(0.646 0.222 280.116);
-  --secondary-foreground: oklch(1 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.646 0.222 280.116);
-  --accent-foreground: oklch(1 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.269 0 0);
-  --input: oklch(0.269 0 0);
-  --ring: oklch(0.646 0.222 280.116 / 0.5);
-  --chart-1: oklch(0.646 0.222 100.116);
-  --chart-2: oklch(0.6 0.245 27.325);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.577 0.245 27.325);
-  --chart-5: oklch(0.985 0 0);
+        --secondary: 210 20% 96%; /* Light gray secondary background */
+        --secondary-foreground: 220 14% 34%; /* Dark gray secondary text */
+
+        --muted: 210 20% 96%; /* Light gray muted background */
+        --muted-foreground: 220 9% 46%; /* Gray muted text */
+
+        --accent: 160 84% 39%; /* Emerald accent */
+        --accent-foreground: 0 0% 100%; /* White text on accent */
+
+        --destructive: 0 84% 60%; /* Red destructive */
+        --destructive-foreground: 0 0% 100%; /* White text on destructive */
+
+        --border: 220 13% 91%; /* Light gray border */
+        --input: 220 13% 91%; /* Light gray input background */
+        --ring: 160 84% 39%; /* Emerald focus ring */
+
+        /* Chart colors */
+        --chart-1: 160 84% 39%; /* Emerald chart color */
+        --chart-2: 160 60% 45%; /* Light emerald chart color */
+        --chart-3: 220 14% 34%; /* Dark gray chart color */
+        --chart-4: 24 70% 52%; /* Orange chart color */
+        --chart-5: 24 70% 60%; /* Light orange chart color */
+
+        --radius: 0.5rem;
+
+        /* Sidebar colors */
+        --sidebar-background: 210 20% 96%; /* Light gray sidebar background */
+        --sidebar-foreground: 220 14% 34%; /* Dark gray sidebar text */
+        --sidebar-primary: 160 84% 39%; /* Emerald sidebar primary */
+        --sidebar-primary-foreground: 0 0% 100%; /* White text on sidebar primary */
+        --sidebar-accent: 160 84% 39%; /* Emerald sidebar accent */
+        --sidebar-accent-foreground: 0 0% 100%; /* White text on sidebar accent */
+        --sidebar-border: 220 13% 91%; /* Light gray sidebar border */
+        --sidebar-ring: 160 84% 39%; /* Emerald sidebar focus ring */
+    }
+
+    .dark {
+        /* Dark mode colors */
+        --background: 222 84% 5%; /* Dark background */
+        --foreground: 210 20% 98%; /* Light text */
+        --card: 222 84% 8%; /* Dark card background */
+        --card-foreground: 210 20% 98%; /* Light card text */
+        --popover: 222 84% 8%; /* Dark popover background */
+        --popover-foreground: 210 20% 98%; /* Light popover text */
+
+        --primary: 160 84% 45%; /* Lighter emerald for dark mode */
+        --primary-foreground: 222 84% 5%; /* Dark text on primary */
+
+        --secondary: 217 33% 17%; /* Dark gray secondary */
+        --secondary-foreground: 210 20% 98%; /* Light secondary text */
+
+        --muted: 217 33% 17%; /* Dark gray muted */
+        --muted-foreground: 215 16% 65%; /* Medium gray muted text */
+
+        --accent: 160 84% 45%; /* Emerald accent for dark mode */
+        --accent-foreground: 0 0% 100%; /* White text on accent */
+
+        --destructive: 0 63% 31%; /* Dark red destructive for dark mode */
+        --destructive-foreground: 0 0% 100%; /* White text on destructive */
+
+        --border: 217 33% 17%; /* Dark border */
+        --input: 217 33% 17%; /* Dark input background */
+        --ring: 160 84% 45%; /* Emerald focus ring for dark mode */
+
+        --chart-1: 160 84% 45%; /* Light emerald chart for dark mode */
+        --chart-2: 160 60% 50%; /* Lighter emerald chart */
+        --chart-3: 215 16% 65%; /* Light gray chart */
+        --chart-4: 24 70% 60%; /* Orange chart for dark mode */
+        --chart-5: 210 20% 98%; /* White chart color */
+
+        --sidebar-background: 222 84% 8%; /* Dark sidebar background */
+        --sidebar-foreground: 210 20% 98%; /* Light sidebar text */
+        --sidebar-primary: 160 84% 45%; /* Emerald sidebar primary for dark mode */
+        --sidebar-primary-foreground: 0 0% 100%; /* White text on sidebar primary */
+        --sidebar-accent: 217 33% 17%; /* Dark sidebar accent */
+        --sidebar-accent-foreground: 210 20% 98%; /* Light text on sidebar accent */
+        --sidebar-border: 217 33% 17%; /* Dark sidebar border */
+        --sidebar-ring: 160 84% 45%; /* Emerald sidebar focus ring */
+    }
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground font-body;
-  }
-  .font-heading {
-    font-family: "Playfair Display", serif;
-  }
-  .font-body {
-    font-family: "Source Sans 3", sans-serif;
-  }
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground font-body;
+    }
+    .font-heading {
+        font-family: "Playfair Display", serif;
+    }
+    .font-body {
+        font-family: "Source Sans 3", sans-serif;
+    }
 }
