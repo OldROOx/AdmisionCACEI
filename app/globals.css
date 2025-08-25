@@ -1,0 +1,166 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* Added required Tailwind directives to fix @layer base error */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated color palette to educational emerald theme */
+  --background: oklch(1 0 0); /* White background */
+  --foreground: oklch(0.35 0 0); /* Dark gray text (#475569) */
+  --card: oklch(0.97 0 0); /* Light gray card background (#f1f5f9) */
+  --card-foreground: oklch(0.35 0 0); /* Dark gray card text */
+  --popover: oklch(1 0 0); /* White popover background */
+  --popover-foreground: oklch(0.35 0 0); /* Dark gray popover text */
+
+  --primary: oklch(0.45 0.15 160); /* Emerald primary (#059669) */
+  --primary-foreground: oklch(1 0 0); /* White text on primary */
+
+  --secondary: oklch(0.97 0 0); /* Light gray secondary background */
+  --secondary-foreground: oklch(0.35 0 0); /* Dark gray secondary text */
+
+  --muted: oklch(0.97 0 0); /* Light gray muted background */
+  --muted-foreground: oklch(0.35 0 0); /* Dark gray muted text */
+
+  --accent: oklch(0.55 0.15 160); /* Emerald accent (#10b981) */
+  --accent-foreground: oklch(1 0 0); /* White text on accent */
+
+  --destructive: oklch(0.55 0.22 35); /* Orange destructive (#ea580c) */
+  --destructive-foreground: oklch(1 0 0); /* White text on destructive */
+
+  --border: oklch(0.85 0 0); /* Light gray border (#d1d5db) */
+  --input: oklch(1 0 0); /* White input background */
+  --ring: oklch(0.45 0.15 160 / 0.5); /* Emerald focus ring */
+
+  /* Updated chart colors to educational theme */
+  --chart-1: oklch(0.45 0.15 160); /* Emerald chart color */
+  --chart-2: oklch(0.55 0.15 160); /* Light emerald chart color */
+  --chart-3: oklch(0.4 0 0); /* Dark gray chart color */
+  --chart-4: oklch(0.55 0.22 35); /* Orange chart color */
+  --chart-5: oklch(0.6 0.22 35); /* Light orange chart color */
+
+  --radius: 0.5rem;
+
+  /* Updated sidebar colors to match educational theme */
+  --sidebar: oklch(0.97 0 0); /* Light gray sidebar background */
+  --sidebar-foreground: oklch(0.35 0 0); /* Dark gray sidebar text */
+  --sidebar-primary: oklch(0.45 0.15 160); /* Emerald sidebar primary */
+  --sidebar-primary-foreground: oklch(1 0 0); /* White text on sidebar primary */
+  --sidebar-accent: oklch(0.55 0.15 160); /* Emerald sidebar accent */
+  --sidebar-accent-foreground: oklch(1 0 0); /* White text on sidebar accent */
+  --sidebar-border: oklch(0.85 0 0); /* Light gray sidebar border */
+  --sidebar-ring: oklch(0.45 0.15 160 / 0.5); /* Emerald sidebar focus ring */
+
+  /* Updated font variables to match design brief */
+  --font-playfair: "Playfair Display", serif;
+  --font-source-sans: "Source Sans 3", sans-serif;
+}
+
+.dark {
+  /* Updated dark mode colors to maintain educational theme */
+  --background: oklch(0.145 0 0); /* Dark background */
+  --foreground: oklch(0.985 0 0); /* Light text */
+  --card: oklch(0.205 0 0); /* Dark card background */
+  --card-foreground: oklch(0.985 0 0); /* Light card text */
+  --popover: oklch(0.205 0 0); /* Dark popover background */
+  --popover-foreground: oklch(0.985 0 0); /* Light popover text */
+
+  --primary: oklch(0.55 0.15 160); /* Lighter emerald for dark mode */
+  --primary-foreground: oklch(0.145 0 0); /* Dark text on primary */
+
+  --secondary: oklch(0.269 0 0); /* Dark gray secondary */
+  --secondary-foreground: oklch(0.985 0 0); /* Light secondary text */
+
+  --muted: oklch(0.269 0 0); /* Dark gray muted */
+  --muted-foreground: oklch(0.708 0 0); /* Medium gray muted text */
+
+  --accent: oklch(0.55 0.15 160); /* Emerald accent for dark mode */
+  --accent-foreground: oklch(1 0 0); /* White text on accent */
+
+  --destructive: oklch(0.6 0.22 35); /* Orange destructive for dark mode */
+  --destructive-foreground: oklch(1 0 0); /* White text on destructive */
+
+  --border: oklch(0.269 0 0); /* Dark border */
+  --input: oklch(0.269 0 0); /* Dark input background */
+  --ring: oklch(0.55 0.15 160 / 0.5); /* Emerald focus ring for dark mode */
+
+  --chart-1: oklch(0.55 0.15 160); /* Light emerald chart for dark mode */
+  --chart-2: oklch(0.6 0.15 160); /* Lighter emerald chart */
+  --chart-3: oklch(0.769 0.05 70); /* Light gray chart */
+  --chart-4: oklch(0.6 0.22 35); /* Orange chart for dark mode */
+  --chart-5: oklch(0.985 0 0); /* White chart color */
+
+  --sidebar: oklch(0.205 0 0); /* Dark sidebar background */
+  --sidebar-foreground: oklch(0.985 0 0); /* Light sidebar text */
+  --sidebar-primary: oklch(0.55 0.15 160); /* Emerald sidebar primary for dark mode */
+  --sidebar-primary-foreground: oklch(1 0 0); /* White text on sidebar primary */
+  --sidebar-accent: oklch(0.269 0 0); /* Dark sidebar accent */
+  --sidebar-accent-foreground: oklch(0.985 0 0); /* Light text on sidebar accent */
+  --sidebar-border: oklch(0.269 0 0); /* Dark sidebar border */
+  --sidebar-ring: oklch(0.55 0.15 160 / 0.5); /* Emerald sidebar focus ring */
+
+  --font-playfair: "Playfair Display", serif;
+  --font-source-sans: "Source Sans 3", sans-serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  /* Added educational system font variables */
+  --font-playfair: var(--font-playfair);
+  --font-source-sans: var(--font-source-sans);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  /* Added font family utilities for educational system */
+  .font-heading {
+    font-family: var(--font-playfair);
+  }
+  .font-body {
+    font-family: var(--font-source-sans);
+  }
+}
